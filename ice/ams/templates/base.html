@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    {% load static %}
+        <link rel="icon" href="{% static 'images/logo.png' sizes='32x32 64x64 128x128' %}">
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/font-awesome-4.7.0/css/font-awesome.min.css' %}">
+</head>
+<body class="bg-light">
+    {% if user.is_authenticated %}
+        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: rgb(89, 17, 99);">
+            <a class="navbar-brand bg-light rounded px-2 text-dark font-weight-bold" href="/ams/dashboard">
+                <img src="{% static 'images/logo.png' %}" class="d-block-inline align-top bg-white rounded shadow-sm" width="30px">
+                ICE {% block heading %}{% endblock %}
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navMainMenu" aria-controls="navMainMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+      
+            <div class="collapse navbar-collapse" id="navMainMenu">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/ams/dashboard">Home</a>
+                    </li>
+
+                    {% block nav_left %}{% endblock %}
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    {% block nav_right %}{% endblock %}
+
+                    <div class="dropdown" style="width: 80px; background-color: rgb(89, 17, 99);">
+                        <a href="#" class="mx-2 dropdown-toggle" id="accountDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-user-circle-o fa-2x"></i>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="accountDropdown" style="background-color: rgba(89, 17, 99,0.5);">
+                            <a class="dropdown-item" href="#">Profile</a>
+                            <a class="dropdown-item" href="/ams/reset-password">Reset Password</a>
+                            
+                        </div>
+                    </div>
+                    <a class="btn btn-primary btn-sm my-2 my-sm-0 text-uppercase" href="/ams/logout">Logout</a>
+                </form>
+            </div>
+        </nav>
+    {% endif %}
+
+    {% block body %}{% endblock %}
+
+    <div class="container-fluid bg-light mt-3">
+        <p class="small text-muted text-center">
+            &copy 2020, ICE. All rights reserved.
+        </p>
+    </div>
+    <script src="{% static 'js/jquery-3.5.1.min.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    {% block script %}{% endblock %}
+</body>
+</html>

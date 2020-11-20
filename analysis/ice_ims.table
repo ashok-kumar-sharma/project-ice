@@ -1,0 +1,28 @@
+-------------------------------
+INVOICE MANAGEMENT SYSTEM (IMS)
+-------------------------------
+	STOCK MANAGEMENT SYSTEM (SMS)
+	=============================
+		ice_ims_sms_categories:
+			-id
+			-name
+			-code
+			
+		ice_ims_sms_items:
+			-id
+			-fk_categories_id
+			-name
+			-hsn_code
+			-sac_code
+			-cost_price
+			-sale_price
+		
+		ice_ims_sms_inwards:
+			-id
+			-fk_purchases_invoice_processing_id
+			-timestamp
+			
+		ice_ims_sms_outwards:
+			-id
+			-fk_sales_invoice_processing_id
+			-timestamp

@@ -1,0 +1,56 @@
+------------------------------
+ACCESS MANAGEMENT SYSTEM (AMS)
+------------------------------
+	ice_ams_accounts: (auth_user)
+		-id
+		-username
+		-email
+		-password
+		-first_name
+		-last_name
+		-is_active
+		-is_staff
+		-is_superuser
+		-last_login
+		-date_joined
+		
+	ice_ams_profiles:
+		-id
+		-date_of_birth
+		-mobile_number
+		-phone_number
+		-address_line_1
+		-address_line_2
+		-city
+		-state
+		-postal_code
+		-country
+		-profile_picture
+		-belongs_to_id_accounts
+		
+	ice_ams_company_profiles:
+		-id
+		-name
+		-pan
+		-gstin
+		-registration_number
+		-phone_number_1
+		-phone_number_2
+		-business_email_1
+		-business_email_2
+		-website
+		-address_line_1
+		-address_line_2
+		-city
+		-state
+		-postal_code
+		-country
+		-logo
+		-is_branch
+		-belongs_to_id_accounts
+		
+	ice_ams_logs:
+		-id
+		-changes
+		-made_by
+		-timestamp

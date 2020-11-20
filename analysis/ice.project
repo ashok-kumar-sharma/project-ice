@@ -1,0 +1,38 @@
+-------------
+ Project ICE
+-------------
+	-Access Management System
+		-Accounts
+		-Profile
+		-Company Profile
+		-Logs
+	=================================================================	
+		
+		- Invoice Management System
+			-Stock Management
+				-Stock Categories (CRUD)
+				-Stock Items (CRUD)
+				-Inward Stock (CRUD)
+				-Outward Stock (CRUD)
+			-Purchase Order (CRUD)
+			-Sales Order (CRUD)
+			-Purchase Invoice Processing (CRUD)
+			-Sales Invoice Processing (CRUD)
+			-GST
+				-HSN Code (CRUD)
+				-SAC Code (CRUD)
+				-Tax Classes (CRUD)
+			-Custom Tax
+			-Logs
+		- Client Management System
+			-Accounts (CRUD)
+			-Profile (Accounts)
+			-Prospective Accounts (CRUD)
+			-Logs
+		- Employee Management System
+			-Departments (CRUD)
+			-Employees (CRUD)
+			-Salary Details (CRUD)
+			-Logs
+			
+	==================================================================

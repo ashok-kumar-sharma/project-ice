@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block title %} ICE :: Register {% endblock %}
+
+{% block body %}
+    <div class="container-fluid bg-light py-3">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                {% load static %}
+                <img src='{% static "images/logo.png" %}' width="80px" class="bg-white rounded-circle shadow">
+                <h3>ICE - Create An Account</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                {% load crispy_forms_tags %}
+                {% load widget_tweaks %}
+                <form method="POST" class="border p-3 rounded bg-white" style="width:100%; max-width: 700px; margin: 0 auto;">
+                    {% csrf_token %}
+                    <div class="form-row">
+                        <div class="col form-group">
+                            {{form.username|as_crispy_field}}
+                        </div>
+                        <div class="col form-group">
+                            {{form.email|as_crispy_field}}
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col form-group">
+                            {{form.first_name|as_crispy_field}}
+                        </div>
+                        <div class="col form-group">
+                            {{form.last_name|as_crispy_field}}
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col form-group">
+                            {{form.password1|as_crispy_field}}
+                        </div>
+                        <div class="col form-group">
+                            {{form.password2|as_crispy_field}}
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col">
+                            <button type="submit" class="btn btn-outline-primary px-5">Register</button>
+                            <span class="small ml-2">Already have an account? <a href="/ams/login" class="card-link">Login Here!</a></span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block script %}
+    <script>
+        $(document).ready(function(){
+            $('.help-block').addClass('small')
+        })
+    </script>
+{% endblock %}
